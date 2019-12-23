@@ -21,6 +21,9 @@ write.table_STARcounts <- function(results_path="./results", table_name="STARcou
   details <- file.info(list.files( path = results_path, pattern = "*ReadsPerGene.out.tab$", full.names = TRUE, recursive = TRUE ))
   details <-  details[with(details, order(as.POSIXct(ctime))), ]
   ff <- rownames(details) # from stackoverflow 13762224, filenames sorted by created time
+  if (length(ff) == 0) {
+    stop("No STAR count files found in results_path.")
+  }
   counts.files <- lapply( ff, read.table, skip = 4 )
   ## column 1: gene ID
   ## column 2: counts for unstranded RNA-seq
