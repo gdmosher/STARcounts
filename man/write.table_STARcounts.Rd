@@ -30,4 +30,6 @@ _SampleName_.ReadsPerGene.out.tab must already exist (created during mapping ste
 }
 \examples{
 write.table_STARcounts(results_path="./results", table_name="STARcountDFeByg.xls")
+countDF <- read.delim("results/STARcountDFeByg.xls", row.names=1, check.names=FALSE)
+head(countDF)
 }
