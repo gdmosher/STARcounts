@@ -1,0 +1,18 @@
+Package: STARcounts
+Title: Combine STAR Aligner Per Sample Read Counts to .xls File
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Gordon",
+           family = "Mosher",
+           role = c("aut", "cre"),
+           email = "gmosh001@ucr.edu",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Combine STAR Aligner Per Sample Read Counts to .xls File.
+License: Artistic-2.0
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.2
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

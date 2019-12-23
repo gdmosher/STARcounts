@@ -1,0 +1,24 @@
+---
+title: "Introduction"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(STARcounts)
+getwd()
+setwd("..")
+write.table_STARcounts(results_path="./results", table_name="STARcountDFeByg.xls")
+countDF <- read.delim("results/STARcountDFeByg.xls", row.names=1, check.names=FALSE)
+head(countDF)
+```
