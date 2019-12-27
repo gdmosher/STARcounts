@@ -22,7 +22,7 @@ write.table_STARcounts(
 }
 \description{
 This function loads STAR Aligner count files *ReadsPerGene.out.tab$ from results_path, accumulates the
-data into a data frame, then writes the results to table_name.
+data into a data frame, then writes the results in xls format to table_name.
 Some code from biostars 241602.
 Some code from stackoverflow 13762224.
 annotation.gtf must already exist before the mapping step, ./gffread -T annotation.gff -o annotation.gtf
