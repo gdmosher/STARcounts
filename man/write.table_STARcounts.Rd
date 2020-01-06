@@ -17,19 +17,17 @@ write.table_STARcounts(
 
 \item{dbg}{Optional debug level defaults to 0}
 }
-\value{
-
-}
 \description{
-This function loads STAR Aligner count files *ReadsPerGene.out.tab$ from results_path, accumulates the
+This function loads preexisting STAR Aligner count files *ReadsPerGene.out.tab$ from results_path, accumulates the
 data into a data frame, then writes the results in xls format to table_name.
-Some code from biostars 241602.
-Some code from stackoverflow 13762224.
+}
+\details{
+_SampleName_.ReadsPerGene.out.tab must already exist (created during mapping step) \cr
 annotation.gtf must already exist before the mapping step, ./gffread -T annotation.gff -o annotation.gtf
-_SampleName_.ReadsPerGene.out.tab must already exist (created during mapping step)
 }
 \examples{
-write.table_STARcounts(results_path="./results", table_name="STARcountDFeByg.xls")
-countDF <- read.delim("results/STARcountDFeByg.xls", row.names=1, check.names=FALSE)
+results_path <- system.file("extdata", "results/", package = "STARcounts")
+write.table_STARcounts(results_path=results_path, table_name="STARcountDFeByg.xls")
+countDF <- read.delim("STARcountDFeByg.xls", row.names=1, check.names=FALSE)
 head(countDF)
 }

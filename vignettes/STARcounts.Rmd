@@ -18,7 +18,8 @@ knitr::opts_chunk$set(
 library(STARcounts)
 getwd()
 setwd("..")
-write.table_STARcounts(results_path="./results", table_name="STARcountDFeByg.xls")
-countDF <- read.delim("results/STARcountDFeByg.xls", row.names=1, check.names=FALSE)
+results_path <- system.file("extdata", "results/", package = "STARcounts")
+write.table_STARcounts(results_path=results_path, table_name="STARcountDFeByg.xls")
+countDF <- read.delim("STARcountDFeByg.xls", row.names=1, check.names=FALSE)
 head(countDF)
 ```
